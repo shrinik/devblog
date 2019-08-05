@@ -5,11 +5,13 @@ date: 2019-08-03 19:30:00 -0500
 categories: blog, jekyll, GitHub
 ---
 
-I always wanted to have a blog to document my thoughts and learnings in the field of software engineering. Part 1 documents the steps to create and version control the blog. Part 2 will cover configuring S3 as a static web host and syncing the site to the S3 bucket. 
+I always wanted a blog to document my thoughts and learnings in the field of software engineering. Part 1 shows how to create a new blog and version control it. Part 2 will cover configuring S3 as a static web host and building a CodePipeline to automatically build the site and copy the site to S3 whenever you commit a change to GitHub. 
 
-Jekyll is a static site generator which generates (or builds) a static website which is a collection of HTML, CSS and JavaScript files which you can then serve from a basic web server. If you are a developer then you can understand how your site **actually** works as compared to using a managed WordPress blog where the backend is a black box. Also, Jekyll offers enough scaffolding to start a blog with minimum effort with the option for more customization at a later stage. 
+Jekyll is a static site generator which generates a static website, which does not require server-side technologies. A static website comprises of HTML, CSS and JavaScript files. This allows you to understand how your site **actually** works as compared to using a managed WordPress blog where the backend is a black box. Also, Jekyll offers enough scaffolding to start a blog with minimum effort with an option to customize it later. 
 
-For a web server to serve static files, I went with AWS S3 as S3 buckets can be easily configured to serve as static file hosts and the running costs are very cheap. Also, I had previously obtained a domain name through AWS and configured it using Route53 so I only needed to copy the static files into the bucket to get the blog up and running. Publishing your first post is winning half the battle. I believe ease of use and pride in understanding how everything actually works will help expand it.
+I am using an AWS S3 bucket as the web server as it can be configured in under a minute. I had purchased a domain name via AWS and it only took me a minute to point it to the S3 bucket using Route53. So all you have to do is copy the static files built by Jekyll to the bucket to serve your blog to the world. By publishing your blog you have won half the battle. I hope a deeper understanding of just how everything works and the ease of adding new posts will allow you to keep it regularly updated.
+
+**You can find the github repository for this blog at <https://github.com/shrinik/devblog>**
 
 ## Installing Jekyll
 
@@ -20,14 +22,14 @@ The official tutorial at <https://jekyllrb.com/docs/> is the bet way to install 
 - (Optional) Update the title, description, url, github*username variables in the _\_config.yml_ file.
 - (Optional) Update the content of the _about.md_ file to reflect your blog.
 - (Optional) Add a new blog post and remove any existing posts if you like.
-- Run the following command in the site directory to build and serve the site on your local machine. It will automatically re-generate the site if you make any changes to the site (hit refresh in your browser to see the new changes). But if you change _\_config.yml_ you will need to stop the server and re-run it.
+- Run the following command in the website directory to build and serve the site on your local machine. This will automatically re-generate the site if you make any changes to the site (refresh your browser to load the changes). Note that if you change anything in _\_config.yml_, you will need to stop the server and re-run the below command.
 ~~~
 bundle exec jekyll serve
 ~~~
 
 ## Versioning the blog
 
-Another advantage of static files is that you can version your blog using using Git (or any other SCM). This allows you to revert your entire blog or specific files to any prior state with the minimum of hassle. Also, committing to the remote repo and ensuring an updated site backup becomes part of your blogging workflow (esepcially when you setup an automated pipeline to build and deploy your blog). 
+An advantage of a static website is that you can version your blog using using Git (or any other SCM). This allows you to revert your entire blog or specific files to any prior state with the minimum of hassle. Also, committing to the remote repo and ensuring an updated site backup becomes part of your blogging workflow (and will be useful when I show how to setup an automated pipeline to build and deploy your blog in Part 2). <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository> has good concise explanations on basics of Git.
 
 ### To follow the next steps, you will need Git installed and accessible via the shell (command prompt) and a GitHub account.
 
@@ -45,4 +47,3 @@ git commit -m 'Initial blog version'
 git remote blog https://github.com/github_username/reponame.git
 git push blog master
 ~~~    
-
