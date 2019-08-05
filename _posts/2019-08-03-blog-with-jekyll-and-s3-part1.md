@@ -15,19 +15,20 @@ I am using an AWS S3 bucket as the web server as it can be configured in under a
 
 ## Installing Jekyll
 
-The official tutorial at <https://jekyllrb.com/docs/> is the bet way to install Jekyll. The tutorial at GitHub Pages for installing Jekyll has a high Google rank but personally I found it confusing. You can use any text editor you like to open the site folder and edit the files. I used Visual Studio Code which is my favorite editor (and free in the bargain).
+The official tutorial at <https://jekyllrb.com/docs/> is the bet way to install Jekyll. Use your preferred text editor to open the site folder and edit the files. I use Visual Studio Code which is free.
 
 ### Open the folder in your text editor and modify the following files:
 
-- (Optional) Update the title, description, url, github*username variables in the _\_config.yml_ file.
+- (Optional) Update the title, description, url, github_username variables in the _\_config.yml_ file.
 - (Optional) Update the content of the _about.md_ file to reflect your blog.
 - (Optional) Add a new blog post and remove any existing posts if you like.
+- (Optional) See <https://kramdown.gettalong.org/syntax.html#fenced-code-blocks> on how to use kramdown which is the default Markdown.
 - Run the following command in the website directory to build and serve the site on your local machine. This will automatically re-generate the site if you make any changes to the site (refresh your browser to load the changes). Note that if you change anything in _\_config.yml_, you will need to stop the server and re-run the below command.
 ~~~
 bundle exec jekyll serve
 ~~~
 
-## Versioning the blog
+## Versioning your blog
 
 An advantage of a static website is that you can version your blog using using Git (or any other SCM). This allows you to revert your entire blog or specific files to any prior state with the minimum of hassle. Also, committing to the remote repo and ensuring an updated site backup becomes part of your blogging workflow (and will be useful when I show how to setup an automated pipeline to build and deploy your blog in Part 2). <https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository> has good concise explanations on basics of Git.
 
