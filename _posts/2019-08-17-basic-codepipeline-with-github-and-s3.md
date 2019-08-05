@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to setup up an AWS CodePipeline"
-date: 2019-08-05 00:00:00 -0500
+date: 2019-08-17 19:30:00 -0500
 categories: AWS, CodePipeline, CodeBuild, S3
 ---
 

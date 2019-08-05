@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Create and Publish a blog using Jekyll & AWS S3 - Part 1"
-date: 2019-08-03 16:00:00 -0500
-categories: blog, jekyll, GitHub
+title: "Create and Publish a blog using Jekyll & AWS S3 - Part 2"
+date: 2019-08-10 19:30:00 -0500
+categories: blog, S3, AWS CLI
 ---
 
-I have always wanted to have a blog to document my thoughts and learnings in the field of software engineering. Part 1 documents the steps to create and version control the blog. Part 2 will cover configuring S3 as a static web host and syncing the site to the S3 bucket. 
+I always wanted to have a blog to document my thoughts and learnings in the field of software engineering. Part 1 documents the steps to create and version control the blog. Part 2 will cover configuring S3 as a static web host and syncing the site to the S3 bucket. 
 
 Jekyll is a static site generator which generates (or builds) a static website which is a collection of HTML, CSS and JavaScript files which you can then serve from a basic web server. If you are a developer then you can understand how your site **actually** works as compared to using a managed WordPress blog where the backend is a black box. Also, Jekyll offers enough scaffolding to start a blog with minimum effort with the option for more customization at a later stage. 
 
